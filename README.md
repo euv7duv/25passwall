@@ -21,3 +21,11 @@ sh passwall.run
 ```sh
 sh passwall.run --target dir --noexec
 ```
+
+## apk --allow-untrusted 一键开关
+
+在 OpenWrt 25.x 上一键开启/关闭 apk 的 `--allow-untrusted` 参数：
+
+```sh
+wget -O toggle.sh https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/apk-toggle.sh && sh toggle.sh
+```
