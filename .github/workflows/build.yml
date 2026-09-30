@@ -1,8 +1,6 @@
 name: Build PassWall run (OpenWrt 25.x, aarch64_cortex-a53)
 
 on:
-  schedule:
-    - cron: "8 22 * * *"  # 北京时间早上 6 点 08
   workflow_dispatch:
 
 jobs:
@@ -40,4 +38,3 @@ jobs:
           overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
