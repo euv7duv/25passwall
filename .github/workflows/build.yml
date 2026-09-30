@@ -1,1 +1,43 @@
+name: Build PassWall run (OpenWrt 25.x, aarch64_cortex-a53)
+
+on:
+  schedule:
+    - cron: "8 22 * * *"  # 北京时间早上 6 点 08
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v6
+
+      - name: 安装依赖
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y makeself curl wget
+
+      - name: 赋予脚本执行权限
+        run: chmod +x shell/build-passwall.sh
+
+      - name: 执行打包脚本
+        run: ./shell/build-passwall.sh --arch aarch64_cortex-a53
+
+      - name: Set tag name
+        run: |
+          TODAY=$(date -u -d '+8 hour' +'%Y-%m-%d')
+          echo "tag_name=$TODAY" >> $GITHUB_ENV
+
+      - name: 上传 Release（仅 .run 文件）
+        uses: softprops/action-gh-release@v3
+        with:
+          files: dist/passwall-run/run/*.run
+          tag_name: ${{ env.tag_name }}
+          name: "Daily Build - ${{ env.tag_name }}"
+          draft: false
+          overwrite_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
