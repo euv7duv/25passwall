@@ -58,3 +58,15 @@ wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sft120
 
 两个脚本均为上游快照备份(2026-10-01), 软件源已改为从本账号的 fork(`euv7duv/sft1200_buddha`)拉取,
 不再受上游仓库删除影响。另有带参数的通用版 `shell/sft1200-buddha/install.sh`(`sh -s ssr-plus` / `sh -s passwall`)。
+
+## sing-box-yg 一键安装(自托管)
+
+```sh
+bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/sb.sh)
+```
+
+`shell/sing-box-yg/` 下为上游快照备份(2026-10-01, 版本 v26.4.11), 包含:
+- `sb.sh` 主脚本, `version` 版本文件, `CFwarp.sh`(WARP 功能), `acme.sh`(证书申请), 均已改从本仓库拉取
+- sing-box 主程序从官方 SagerNet Releases 下载, 本来就不走上游仓库
+
+唯一仍走上游的是 `sbwpph` (约 24MB, 仅菜单选项 14 的 Psiphon/WARP 代理功能使用), 核心安装与日常使用不受影响。
