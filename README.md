@@ -69,3 +69,4 @@ bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell
 - `sb.sh` 主脚本, `version` 版本文件, `CFwarp.sh`(WARP 功能), `acme.sh`(证书申请), 均从本仓库拉取
 - `sbwpph_amd64.gz` / `sbwpph_arm64.gz` (菜单选项 14 的 Psiphon/WARP 代理功能使用, gzip 压缩存放, 脚本下载后自动解压)
 - sing-box 主程序从官方 SagerNet Releases 下载, 本来就不走上游仓库
+- `cfwarp/` 目录: WARP 功能所需的二进制文件(warp-go、wgcf、wireguard-go、warpplus、warpapi, 均为 gzip 压缩存放)及脚本(acwarp.sh、wp-plus.py), 原从作者 GitLab(gitlab.com/rwkgyg/CFwarp)下载, 现已全部自托管
