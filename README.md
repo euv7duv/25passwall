@@ -41,13 +41,3 @@ bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell
 ```sh
 vmpt="21345" vlpt="17542" xhpt="18456" vxpt="19912" vwpt="20154" xupt="20245" xcpt="20345" hypt="21254" tupt="20458" nvpt="22453" anpt="20578" arpt="20682" alns="y" hyjpt="25000:30000,40000" bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/argosbx/main/argosbx.sh)
 ```
-
-## x-ui-yg 一键安装(自托管)
-
-```sh
-bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/x-ui-yg/install.sh)
-```
-
-`shell/x-ui-yg/install.sh` 和 `version` 为上游快照备份(2026-10-01), 已改从本仓库拉取。
-程序包 `x-ui-linux-(amd64|arm64).tar.gz` 需上传到本仓库 **x-ui-vendor** 标签的 Release 附件后方可安装;
-acme/warp/xuiwpph 等可选功能仍走上游。
