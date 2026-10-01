@@ -1,6 +1,6 @@
 # 25passwall 自托管备份 (上游: d5f6y7/sing-box-yg, 备份日期: 2026-10-01)
 # sb.sh/version/CFwarp.sh/acme.sh 已改从本仓库拉取;
-# sbwpph_$cpu (约24MB, 仅菜单选项14的Psiphon/WARP功能使用) 仍走上游, 核心安装不受影响
+# sbwpph_$cpu 已改从本仓库拉取, 上游删除不影响
 #!/bin/bash
 export LANG=en_US.UTF-8
 red='\033[0;31m'
@@ -4155,7 +4155,8 @@ case $(uname -m) in
 aarch64) cpu=arm64;;
 x86_64) cpu=amd64;;
 esac
-curl -L -o /etc/s-box/sbwpph -# --retry 2 --insecure https://raw.githubusercontent.com/d5f6y7/sing-box-yg/main/sbwpph_$cpu
+curl -L -o /etc/s-box/sbwpph.gz -# --retry 2 --insecure https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/sbwpph_$cpu.gz
+gunzip -f /etc/s-box/sbwpph.gz
 chmod +x /etc/s-box/sbwpph
 fi
 ps -ef | grep '[s]bwpph' | awk '{print $2}' | xargs kill 2>/dev/null
