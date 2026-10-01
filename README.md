@@ -65,8 +65,7 @@ wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sft120
 bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/sb.sh)
 ```
 
-`shell/sing-box-yg/` 下为上游快照备份(2026-10-01, 版本 v26.4.11), 包含:
-- `sb.sh` 主脚本, `version` 版本文件, `CFwarp.sh`(WARP 功能), `acme.sh`(证书申请), 均已改从本仓库拉取
+`shell/sing-box-yg/` 下为上游快照备份(2026-10-01, 版本 v26.4.11), 已完全自托管, 上游删除不影响使用:
+- `sb.sh` 主脚本, `version` 版本文件, `CFwarp.sh`(WARP 功能), `acme.sh`(证书申请), 均从本仓库拉取
+- `sbwpph_amd64.gz` / `sbwpph_arm64.gz` (菜单选项 14 的 Psiphon/WARP 代理功能使用, gzip 压缩存放, 脚本下载后自动解压)
 - sing-box 主程序从官方 SagerNet Releases 下载, 本来就不走上游仓库
-
-唯一仍走上游的是 `sbwpph` (约 24MB, 仅菜单选项 14 的 Psiphon/WARP 代理功能使用), 核心安装与日常使用不受影响。
