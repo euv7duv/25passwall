@@ -36,7 +36,7 @@ wget -O toggle.sh https://raw.githubusercontent.com/euv7duv/25passwall/main/shel
 bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/argosbx-quick.sh)
 ```
 
-已预设各协议端口, 与原命令等效:
+已预设各协议端口。安装脚本 `shell/argosbx.sh` 为上游快照备份(2026-10-01), 不依赖原仓库, 上游更新需手动同步:
 
 ```sh
 vmpt="21345" vlpt="17542" xhpt="18456" vxpt="19912" vwpt="20154" xupt="20245" xcpt="20345" hypt="21254" tupt="20458" nvpt="22453" anpt="20578" arpt="20682" alns="y" hyjpt="25000:30000,40000" bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/argosbx/main/argosbx.sh)
