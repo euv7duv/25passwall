@@ -42,12 +42,19 @@ bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell
 vmpt="21345" vlpt="17542" xhpt="18456" vxpt="19912" vwpt="20154" xupt="20245" xcpt="20345" hypt="21254" tupt="20458" nvpt="22453" anpt="20578" arpt="20682" alns="y" hyjpt="25000:30000,40000" bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/argosbx/main/argosbx.sh)
 ```
 
-## SFT1200 SSR-Plus/PassWall 一键安装(自托管)
+## SFT1200 一键安装(自托管, 分 SSR-Plus / PassWall 两个版本)
+
+SSR-Plus 版:
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sft1200-buddha/install.sh | sh -s ssr-plus
+wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sft1200-buddha/install-ssr-plus.sh | sh
 ```
 
-`shell/sft1200-buddha/install.sh` 为上游快照备份(2026-10-01), 软件源已改为从本账号的 fork 拉取。
-使用前需先在 GitHub 网页上 Fork `ericwang2006/sft1200_buddha` 到本账号(默认名 `sft1200_buddha` 即可),
-之后安装不再受上游仓库删除影响。
+PassWall 版:
+
+```sh
+wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sft1200-buddha/install-passwall.sh | sh
+```
+
+两个脚本均为上游快照备份(2026-10-01), 软件源已改为从本账号的 fork(`euv7duv/sft1200_buddha`)拉取,
+不再受上游仓库删除影响。另有带参数的通用版 `shell/sft1200-buddha/install.sh`(`sh -s ssr-plus` / `sh -s passwall`)。
