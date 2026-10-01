@@ -1,5 +1,5 @@
 #!/bin/bash
-# 25passwall - argosbx 一键部署脚本(预设端口版本)
+# 25passwall - argosbx 一键部署脚本(预设端口版本, 自托管不依赖上游)
 #
 # 一键运行:
 #   bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/argosbx-quick.sh)
@@ -19,4 +19,4 @@ export arpt="20682"
 export alns="y"
 export hyjpt="25000:30000,40000"
 
-bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/argosbx/main/argosbx.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/argosbx.sh)
