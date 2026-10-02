@@ -4027,7 +4027,7 @@ if [[ $vi =~ lxc|openvz ]]; then
 yellow "当前VPS的架构为 $vi，不支持开启原版BBR加速" && sleep 2 && exit 
 else
 green "点击任意键，即可开启BBR加速，ctrl+c退出"
-bash <(curl -Ls https://raw.githubusercontent.com/teddysun/across/master/bbr.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/bbr.sh)
 fi
 }
 

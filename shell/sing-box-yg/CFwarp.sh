@@ -55,14 +55,14 @@ esac
 
 cfwarpshow(){
 insV=$(cat /root/warpip/v 2>/dev/null)
-latestV=$(curl -sL https://raw.githubusercontent.com/yonggekkk/warp-yg/main/version | awk -F "更新内容" '{print $1}' | head -n 1)
+latestV=$(curl -sL https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/version | awk -F "更新内容" '{print $1}' | head -n 1)
 if [[ -f /root/warpip/v ]]; then
 if [ "$insV" = "$latestV" ]; then
 echo -e " 当前 CFwarp-yg 脚本版本号：${bblue}${insV}${plain} 已是最新版本"
 else
 echo -e " 当前 CFwarp-yg 脚本版本号：${bblue}${insV}${plain}"
 echo -e " 检测到最新 CFwarp-yg 脚本版本号：${yellow}${latestV}${plain} (可选择8进行更新)"
-echo -e "${yellow}$(curl -sL https://raw.githubusercontent.com/yonggekkk/warp-yg/main/version)${plain}"
+echo -e "${yellow}$(curl -sL https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/version)${plain}"
 fi
 else
 echo -e " 当前 CFwarp-yg 脚本版本号：${bblue}${latestV}${plain}"
@@ -289,7 +289,7 @@ fi
 }
 
 lncf(){
-curl -sSL -o /usr/bin/cf -L https://raw.githubusercontent.com/yonggekkk/warp-yg/main/CFwarp.sh
+curl -sSL -o /usr/bin/cf -L https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/CFwarp.sh
 chmod +x /usr/bin/cf
 }
 
@@ -298,7 +298,7 @@ if [[ ! -f '/usr/bin/cf' ]]; then
 red "未正常安装CFwarp脚本!" && exit
 fi
 lncf
-curl -sL https://raw.githubusercontent.com/yonggekkk/warp-yg/main/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
+curl -sL https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
 green "CFwarp脚本升级成功" && cf
 }
 
@@ -916,7 +916,7 @@ else
 CheckWARP
 fi
 ShowWGCF && lncf && reswarp
-curl -sL https://raw.githubusercontent.com/yonggekkk/warp-yg/main/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
+curl -sL https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
 }
 
 warpinscha(){
@@ -1511,7 +1511,7 @@ mv -f wgcf-account.toml /etc/wireguard >/dev/null 2>&1
 systemctl enable wg-quick@wgcf
 cat /etc/wireguard/wgcf.conf && sleep 2
 CheckWARP && ShowWGCF && lncf && reswarp
-curl -sL https://raw.githubusercontent.com/yonggekkk/warp-yg/main/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
+curl -sL https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/version | awk -F "更新内容" '{print $1}' | head -n 1 > /root/warpip/v
 }
 
 WARPup(){
