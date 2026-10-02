@@ -1,4 +1,5 @@
 #!/bin/bash
+# 25passwall self-hosted backup (2026-10-02)
 export LANG=en_US.UTF-8
 case "$(uname -m)" in
 	x86_64 | x64 | amd64 )
@@ -37,7 +38,7 @@ echo -e "五、此配置中PrivateKey、Address的V6地址、reserved(可选)，
 
 acwarpapi(){
 echo "下载warp api注册程序"
-curl -L -o warpapi -# --retry 2 https://gitlab.com/rwkgyg/CFwarp/-/raw/main/point/cpu1/$cpu
+curl -L -o warpapi.gz -# --retry 2 https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/warpapi_${cpu}.gz && gunzip -f warpapi.gz
 chmod +x warpapi
 output=$(./warpapi)
 if ./warpapi 2>&1 | grep -q "connection refused"; then
@@ -75,7 +76,7 @@ rmrf
 
 wgcfreg(){
 echo "下载warp-wgcf注册程序"
-curl -L -o wgcf -# --retry 2 https://gitlab.com/rwkgyg/cfwarp/-/raw/main/wgcf_2.2.20_$cpu
+curl -L -o wgcf.gz -# --retry 2 https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/wgcf_2.2.22_${cpu}.gz && gunzip -f wgcf.gz
 chmod +x wgcf
 echo | ./wgcf register 2> /dev/null
 if echo | ./wgcf register 2>&1 | grep -q "connection refused"; then
@@ -152,11 +153,11 @@ rmrf
 
 warpgoac(){
 echo "下载warp-go注册程序"
-curl -L -o warp-go -# --retry 2 https://gitlab.com/rwkgyg/CFwarp/-/raw/main/warp-go_1.0.8_linux_${cpu}
+curl -L -o warp-go.gz -# --retry 2 https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/warp-go_1.0.8_linux_${cpu}.gz && gunzip -f warp-go.gz
 chmod +x warp-go
 curl -L -o warp.conf --retry 2 https://api.zeroteam.top/warp?format=warp-go
 if [[ ! -s warp.conf ]]; then
-curl -L -o warpapi -# --retry 2 https://gitlab.com/rwkgyg/CFwarp/-/raw/main/point/cpu1/$cpu
+curl -L -o warpapi.gz -# --retry 2 https://raw.githubusercontent.com/euv7duv/25passwall/main/shell/sing-box-yg/cfwarp/warpapi_${cpu}.gz && gunzip -f warpapi.gz
 chmod +x warpapi
 output=$(./warpapi)
 private_key=$(echo "$output" | awk -F ': ' '/private_key/{print $2}')
